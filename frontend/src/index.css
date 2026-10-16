@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-[#090d16] text-slate-100 font-sans antialiased min-h-screen selection:bg-sky-600/30 selection:text-sky-100;
+    font-feature-settings: 'tnum' 1, 'cv02' 1, 'cv03' 1, 'cv04' 1, 'cv11' 1;
+  }
+
+  /* Accessible, precise focus indicators */
+  :focus-visible {
+    @apply outline-none ring-2 ring-sky-500 ring-offset-2 ring-offset-[#090d16];
+  }
+
+  /* Quiet technical dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090d16;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1c263c;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #273553;
+  }
+}
+
+/* Layered solid architectural surfaces */
+.card-surface {
+  @apply bg-[#0d1322] border border-[#1c263c] rounded-xl shadow-sm;
+}
+
+.card-elevated {
+  @apply bg-[#131b2e] border border-[#273553] rounded-xl shadow-md shadow-black/40;
+}
+
+.panel-header {
+  @apply px-5 py-3.5 border-b border-[#1c263c] flex items-center justify-between bg-[#0a0f1c]/60;
+}
+
+/* Subtle, deliberate row and card hover */
+.interactive-hover {
+  @apply transition-colors duration-150 hover:border-[#273553] hover:bg-[#11182c];
+}
+
+/* Reusable, restrained status badges (sentence case, modest radius, crisp borders) */
+.badge-neutral {
+  @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-[#131b2e] border border-[#273553] text-slate-300;
+}
+
+.badge-brand {
+  @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-sky-950/60 border border-sky-800/60 text-sky-300;
+}
+
+.badge-emerald {
+  @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-emerald-950/50 border border-emerald-800/60 text-emerald-300;
+}
+
+.badge-amber {
+  @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-amber-950/50 border border-amber-800/60 text-amber-300;
+}
+
+.badge-rose {
+  @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-rose-950/50 border border-rose-800/60 text-rose-300;
+}
+
+.badge-teal {
+  @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-teal-950/50 border border-teal-800/60 text-teal-300;
+}
+
+/* Base input and select styles - crisp, clear typography */
+.input-field {
+  @apply w-full bg-[#090e1a] border border-[#1c263c] rounded-lg px-3.5 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500/40 transition-colors;
+}
+
+/* Action button utilities - polished subtle hover/pressed micro-interactions */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 active:bg-sky-700 active:scale-[0.985] text-white font-medium text-xs tracking-tight transition-all duration-150 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090d16] disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[#131b2e] hover:bg-[#1a253e] active:bg-[#101726] active:scale-[0.985] border border-[#273553] text-slate-200 hover:text-white font-medium text-xs tracking-tight transition-all duration-150 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090d16] disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-[#131b2e] active:scale-[0.985] font-medium text-xs transition-all duration-150 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+/* Tabular number utility for prices and financial metrics */
+.num-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Restrained skeleton loader for asynchronous states */
+.skeleton-box {
+  background: linear-gradient(90deg, #0d1322 25%, #162035 50%, #0d1322 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .skeleton-box {
+    animation: none !important;
+    background: #111827 !important;
+  }
+  .hero-video-element {
+    display: none !important;
+  }
+  .hero-poster-element {
+    display: block !important;
+  }
+}
+
+

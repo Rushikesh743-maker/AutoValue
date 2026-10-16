@@ -1,0 +1,110 @@
+[
+  {
+    "model_version": "v001",
+    "selected_model": "Random Forest",
+    "training_timestamp": "2026-10-02T07:59:02.827200+00:00",
+    "random_state": 42,
+    "total_records": 88,
+    "train_records": 71,
+    "test_records": 17,
+    "cv_folds": 5,
+    "target_col": "listed_price",
+    "numerical_features": [
+      "year",
+      "km_driven",
+      "car_age",
+      "km_per_year",
+      "engine_cc",
+      "mileage",
+      "owner_count"
+    ],
+    "categorical_features": [
+      "brand",
+      "model",
+      "variant",
+      "fuel_type",
+      "transmission",
+      "city",
+      "state",
+      "seller_type"
+    ],
+    "metrics_test": {
+      "mae": 241939.25,
+      "rmse": 318851.82,
+      "r2": 0.1311,
+      "median_ae": 164826.36,
+      "cv_mae_mean": 243243.35,
+      "cv_mae_std": 44287.34
+    },
+    "all_model_comparison": {
+      "Linear Regression": {
+        "mae": 267363.13,
+        "rmse": 318547.74,
+        "r2": 0.1327,
+        "median_ae": 240170.53,
+        "cv_mae_mean": 277431.56,
+        "cv_mae_std": 44425.82
+      },
+      "Random Forest": {
+        "mae": 241939.25,
+        "rmse": 318851.82,
+        "r2": 0.1311,
+        "median_ae": 164826.36,
+        "cv_mae_mean": 243243.35,
+        "cv_mae_std": 44287.34
+      },
+      "Gradient Boosting": {
+        "mae": 271399.01,
+        "rmse": 377173.05,
+        "r2": -0.2159,
+        "median_ae": 215826.78,
+        "cv_mae_mean": 263263.03,
+        "cv_mae_std": 41567.13
+      },
+      "HistGradientBoosting": {
+        "mae": 242517.22,
+        "rmse": 288332.35,
+        "r2": 0.2894,
+        "median_ae": 186271.89,
+        "cv_mae_mean": 266083.6,
+        "cv_mae_std": 67251.09
+      },
+      "XGBoost": {
+        "mae": 245224.23,
+        "rmse": 349839.35,
+        "r2": -0.046,
+        "median_ae": 188475.12,
+        "cv_mae_mean": 269322.51,
+        "cv_mae_std": 40158.32
+      }
+    },
+    "model_artifact": "models\\model_v001.joblib",
+    "preprocessor_artifact": "models\\preprocessor_v001.joblib",
+    "status": "retired"
+  },
+  {
+    "model_version": "v002",
+    "dataset_version": "v0.3",
+    "status": "active",
+    "selected_model": "XGBoost Regressor",
+    "metrics": {
+      "mae": 85357.31,
+      "rmse": 167605.71,
+      "r2": 0.9368,
+      "median_ae": 50061.5,
+      "cv_mae_mean": 91519.74,
+      "cv_mae_std": 10030.89,
+      "cv_r2_mean": 0.9344,
+      "cv_r2_std": 0.0211,
+      "hyperparameters": {
+        "n_estimators": 150,
+        "max_depth": 6,
+        "learning_rate": 0.06
+      }
+    },
+    "training_timestamp": "2026-10-02T08:44:53.581809+00:00",
+    "model_artifact": "models\\model_v002.joblib",
+    "preprocessor_artifact": "models\\preprocessor_v002.joblib",
+    "metadata_path": "models\\metadata_v002.json"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "model_version": "v003_candidate",
+    "dataset_version": "v0.3",
+    "status": "candidate",
+    "selected_model": "XGBoost Regressor Candidate",
+    "metrics": {
+      "mae": 170887.74,
+      "rmse": 306049.3,
+      "r2": 0.763,
+      "median_ae": 71685.62,
+      "cv_mae_mean": 81192.56,
+      "cv_mae_std": 13680.23,
+      "cv_r2_mean": 0.9361,
+      "cv_r2_std": 0.0409,
+      "val_mae": 139675.52,
+      "val_r2": 0.919,
+      "hyperparameters": {
+        "n_estimators": 150,
+        "max_depth": 6,
+        "learning_rate": 0.06
+      }
+    },
+    "training_timestamp": "2026-10-10T16:37:15.519558+00:00",
+    "model_artifact": "models\\candidates\\v003_eval\\model_v003_candidate.joblib",
+    "preprocessor_artifact": "models\\candidates\\v003_eval\\preprocessor_v003_candidate.joblib",
+    "metadata_path": "models\\candidates\\v003_eval\\metadata_v003_candidate.json"
+  }
+]

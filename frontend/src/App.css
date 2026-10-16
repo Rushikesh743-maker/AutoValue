@@ -1,0 +1,13 @@
+/* AutoValue Pro - Application Print and Layout Styles */
+
+/* Print styling for valuation reports */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, footer, button, .no-print {
+    display: none !important;
+  }
+}
+
